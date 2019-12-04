@@ -1,7 +1,6 @@
 package com.example.elegant_media;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.elegant_media.REST_Classes.Details;
 import com.example.elegant_media.REST_Classes.Image;
-import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //Create hoteldata adapter for binding data with ListView.
@@ -53,7 +50,7 @@ public class HotelDataAdapter extends RecyclerView.Adapter<HotelDataAdapter.Hote
     public HotelDataViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.details_activity, parent, false);
+        View view = layoutInflater.inflate(R.layout.activity_details, parent, false);
         return new HotelDataViewHolder(view);
     }
 

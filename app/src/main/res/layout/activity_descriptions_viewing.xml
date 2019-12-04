@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Viewing loaded image and description-->
     <ImageView
         android:id="@+id/imageLoadMedium"
         android:layout_width="wrap_content"

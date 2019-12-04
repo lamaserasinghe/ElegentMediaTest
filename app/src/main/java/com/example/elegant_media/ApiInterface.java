@@ -6,8 +6,8 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-//Define the Endpoints
 
+//Defines the Endpoints
 public interface ApiInterface {
 
     @GET("hotels.json")

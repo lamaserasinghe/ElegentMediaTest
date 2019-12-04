@@ -3,7 +3,6 @@ package com.example.elegant_media;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -17,14 +16,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class LoadDetailsActivity extends AppCompatActivity {
     public HotelDataAdapter adapter;
     private List<Details> detailsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_load_details);
 
         final ListView list = findViewById(R.id.list);
         ArrayList<Details> arrayList = new ArrayList<Details>();
@@ -41,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         HotelDataAdapter hotelDataAdapter = new HotelDataAdapter(this, arrayList);
-        //list.setAdapter(hotelDataAdapter);
 
 
+        //API call
         ApiInterface apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
         Call call=apiInterface.getHotelDetails();
 
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     if(response.body()!=null){
 
                         detailsList=(List<Details>)response.body();
-                        adapter = new HotelDataAdapter(MainActivity.this, detailsList);
+                        adapter = new HotelDataAdapter(LoadDetailsActivity.this, detailsList);
 
 
                     }
